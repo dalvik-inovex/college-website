@@ -7,10 +7,12 @@
   grid-template-columns: 48px 1fr 120px 140px 70px;
   align-items: center;
   gap: 18px;
-  padding: 20px 0;
+  padding: 20px 20px;
+  margin: 0 -20px;
   border-bottom: 1px solid var(--mist-light);
   position: relative;
   color: var(--charcoal);
+  transition: background 160ms ease;
 }
 
 .programs__row::before {
@@ -67,6 +69,8 @@
   .programs__row {
     grid-template-columns: 32px 1fr;
     row-gap: 6px;
+    padding: 16px 12px;
+    margin: 0 -12px;
   }
   .programs__meta, .programs__arrow { grid-column: 2; justify-self: start; }
 }
