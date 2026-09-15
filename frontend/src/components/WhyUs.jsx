@@ -15,7 +15,7 @@ export default function WhyUs() {
           <div className="whyus__media-inner" />
         </div>
         <div className="whyus__content">
-          <span className="kicker">Why Rajmata Polytechnic</span>
+          <span className="kicker">Why Nilkanth Polytechnic</span>
           <h2>Education measured by what students can do, not just what they can recall</h2>
           <ul className="whyus__list">
             {POINTS.map((p) => (

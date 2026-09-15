@@ -14,7 +14,7 @@ export default function Hero() {
           practical skill.
         </h1>
         <p className="hero__lede">
-          Rajmata Polytechnic trains students on real lab equipment and live
+          Nilkanth Polytechnic trains students on real lab equipment and live
           project work from year one — not just for exams, but for the job
           that follows.
         </p>

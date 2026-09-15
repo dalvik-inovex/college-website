@@ -66,8 +66,8 @@ export default function Contact() {
 
           <div className="contact__info">
             <h2>Visit or write to us</h2>
-            <p>Plot 14, MIDC Road, Badlapur, Maharashtra 421503</p>
-            <p>admissions@rajmatapolytechnic.edu.in</p>
+            <p>Address: At Munde Educational Campus, Malangad Rd, Bhal Gaon, Gad Road, Kalyan, Maharashtra 421306</p>
+            <p>admissions@nilkanthpolytechnic.edu.in</p>
             <p>+91 98200 00000</p>
             <p style={{ color: "var(--mist)", fontSize: "0.85rem", marginTop: 24 }}>
               Office hours: Monday–Saturday, 9:30 AM – 5:30 PM

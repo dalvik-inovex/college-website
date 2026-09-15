@@ -27,9 +27,9 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <Link to="/" className="navbar__brand">
-          <span className="navbar__mark">RP</span>
+          <span className="navbar__mark">NP</span>
           <span className="navbar__name">
-            Rajmata Polytechnic
+            Nilkanth Polytechnic
             <small>&amp; Institute of Engineering</small>
           </span>
         </Link>

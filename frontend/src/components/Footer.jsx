@@ -6,9 +6,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__col footer__brand">
-          <span className="footer__mark">RP</span>
+          <span className="footer__mark">NP</span>
           <p>
-            Rajmata Polytechnic &amp; Institute of Engineering offers MSBTE-affiliated
+            Nilkanth Polytechnic &amp; Institute of Engineering offers MSBTE-affiliated
             diploma programs and AICTE-approved degree engineering, built around
             workshop-first, practical learning.
           </p>
@@ -32,14 +32,14 @@ export default function Footer() {
 
         <div className="footer__col">
           <h4>Reach Us</h4>
-          <p>Plot 14, MIDC Road, Badlapur, Maharashtra 421503</p>
-          <p>admissions@rajmatapolytechnic.edu.in</p>
+          <p>Address: At Munde Educational Campus, Malangad Rd, Bhal Gaon, Gad Road, Kalyan, Maharashtra 421306</p>
+          <p>admissions@nilkanthpolytechnic.edu.in</p>
           <p>+91 98200 00000</p>
         </div>
       </div>
 
       <div className="container footer__bottom">
-        <span>© {new Date().getFullYear()} Rajmata Polytechnic &amp; Institute of Engineering. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Nilkanth Polytechnic &amp; Institute of Engineering. All rights reserved.</span>
         <span>MSBTE Affiliated. AICTE Approved.</span>
       </div>
     </footer>
