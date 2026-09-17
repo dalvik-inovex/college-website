@@ -5,8 +5,8 @@ export default function About() {
     <>
       <PageHeader
         eyebrow="About"
-        title="Technical education in Kalyan"
-        lede="Nilkanth Polytechnic & Institute of Engineering was established to bring industry-aligned diploma and degree engineering education to students across the region."
+        title="27 years of technical education in Badlapur"
+        lede="Rajmata Polytechnic & Institute of Engineering was established to bring industry-aligned diploma and degree engineering education to students across the region."
       />
       <section className="section">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>

@@ -1,0 +1,426 @@
+/* ==========================================================
+   DASHBOARD PAGE — DRAFTING SHEET THEME
+   100% Mobile Responsive (Zero Horizontal Scroll)
+   ========================================================== */
+
+.dashboard-content {
+  padding: clamp(16px, 3vw, 36px);
+  flex: 1;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  gap: 16px;
+  color: var(--mist);
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--mist-light);
+  border-top-color: var(--amber);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ── Stat Cards Grid (Responsive 4 → 2 → 1) ──────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 2vw, 22px);
+  margin-bottom: clamp(20px, 3.5vw, 36px);
+  max-width: 100%;
+}
+
+.stat-card {
+  background: var(--paper-surface);
+  border: 1px solid var(--mist-light);
+  border-radius: var(--radius-xs);
+  padding: clamp(16px, 2.5vw, 22px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  box-shadow: 0 1px 3px rgba(16, 36, 59, 0.04);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Left architectural tick bar */
+.stat-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 36, 59, 0.07);
+  border-color: #cbd5e1;
+}
+
+.stat-card--blue::before  { background: var(--steel); }
+.stat-card--amber::before { background: var(--amber); }
+.stat-card--teal::before  { background: var(--status-green); }
+.stat-card--red::before   { background: var(--status-red); }
+
+.stat-card-icon {
+  font-size: 1.65rem;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+  border: 1px solid var(--mist-light);
+}
+
+.stat-card--blue .stat-card-icon  { background: var(--status-blue-bg); }
+.stat-card--amber .stat-card-icon { background: var(--status-amber-bg); }
+.stat-card--teal .stat-card-icon  { background: var(--status-green-bg); }
+.stat-card--red .stat-card-icon   { background: var(--status-red-bg); }
+
+.stat-card-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.stat-card-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.stat-card-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--mist);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Activity Panels (Announcements & Enquiries) ──────────── */
+.dashboard-panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.5vw, 24px);
+  max-width: 100%;
+}
+
+.dashboard-panel {
+  background: var(--paper-surface);
+  border: 1px solid var(--mist-light);
+  border-radius: var(--radius-xs);
+  padding: clamp(16px, 2.5vw, 24px);
+  box-shadow: 0 1px 3px rgba(16, 36, 59, 0.04);
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Corner tick mark matching frontend section headers */
+.dashboard-panel::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 22px;
+  height: 22px;
+  border-top: 3px solid var(--steel);
+  border-left: 3px solid var(--steel);
+}
+
+.panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--mist-light);
+  gap: 8px;
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.panel-counter {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--mist);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.panel-empty {
+  color: var(--mist);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 32px 0;
+  font-style: italic;
+}
+
+/* ── Announcements Feed (Zero horizontal scroll) ─────────── */
+.announcements-feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  border-top: 1px solid var(--mist-light);
+}
+
+.announcement-item {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--mist-light);
+  position: relative;
+  transition: background 150ms ease;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Hover left tick mark matching frontend's .programs__row::before */
+.announcement-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--amber);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 160ms ease;
+}
+
+.announcement-item:hover {
+  background: var(--paper-raised);
+}
+
+.announcement-item:hover::before {
+  transform: scaleY(1);
+}
+
+.announcement-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.announcement-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.announcement-pinned-tag {
+  background: var(--amber);
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.announcement-date {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--mist);
+  white-space: nowrap;
+}
+
+.announcement-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.45;
+  margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* ── Enquiries Feed ──────────────────────────────────────── */
+.enquiries-feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  border-top: 1px solid var(--mist-light);
+}
+
+.enquiry-item {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--mist-light);
+  position: relative;
+  transition: background 150ms ease;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.enquiry-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--steel);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 160ms ease;
+}
+
+.enquiry-item:hover {
+  background: var(--paper-raised);
+}
+
+.enquiry-item:hover::before {
+  transform: scaleY(1);
+}
+
+.enquiry-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.enquiry-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.enquiry-date {
+  font-size: 0.78rem;
+  color: var(--mist);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.enquiry-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--mist);
+  word-break: break-word;
+}
+
+.enquiry-course-tag {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--steel);
+  border: 1px solid var(--steel);
+  padding: 1px 7px;
+  border-radius: var(--radius-xs);
+}
+
+.enquiry-contact-info {
+  word-break: break-all;
+}
+
+/* ── Badges & Status Dots ────────────────────────────────── */
+.notice-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid transparent;
+}
+
+.notice-badge--admission { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+.notice-badge--exam      { background: #fef3c7; color: #b45309; border-color: #fde68a; }
+.notice-badge--event     { background: #dcfce7; color: #15803d; border-color: #bbf7d0; }
+.notice-badge--general   { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot--new       { background: var(--amber); box-shadow: 0 0 0 2px var(--status-amber-bg); }
+.status-dot--contacted { background: var(--steel); box-shadow: 0 0 0 2px var(--status-blue-bg); }
+.status-dot--closed    { background: var(--mist); }
+
+/* ── Responsive Rules ───────────────────────────────────── */
+@media (max-width: 1100px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 820px) {
+  .dashboard-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 16px;
+  }
+
+  .stat-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .dashboard-panel {
+    padding: 14px 14px;
+  }
+
+  .announcement-item,
+  .enquiry-item {
+    padding: 12px 6px;
+  }
+}

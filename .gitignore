@@ -10,6 +10,8 @@ frontend/node_modules/
 backend/.env
 frontend/.env
 serviceAccountKey.json
+DEVELOPER_GUIDE.MD
+USER_GUIDE.md
 
 # Build outputs
 dist/
